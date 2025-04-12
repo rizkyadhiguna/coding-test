@@ -31,24 +31,19 @@ The FastAPI application serves data related to sales representatives, including 
     * Python 3.7+ installed.
     * pip (Python package installer) installed.
 
-2.  **Clone the repository:**
+2.  **Create a virtual environment (recommended):**
     ```bash
-    git clone <your-repository-url>
     cd backend
-    ```
-
-3.  **Create a virtual environment (recommended):**
-    ```bash
     python3 -m venv coding-test
     source coding-test/bin/activate
     ```
 
-4.  **Install dependencies:**
+3.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 
-5.  **Set up Google Gemini API Key (Optional):**
+4.  **Set up Google Gemini API Key (Optional):**
     * If you want to use the AI feature, you need a Google Gemini API key.
     * Obtain an API key from the [Google Cloud Console](https://console.cloud.google.com/).
     * Set the API key as an environment variable:
@@ -58,12 +53,12 @@ The FastAPI application serves data related to sales representatives, including 
         Replace `YOUR_API_KEY` with your actual API key.
         * **Important:** Do NOT hardcode your API key in the code.
 
-6.  **Run the FastAPI server:**
+5.  **Run the FastAPI server:**
     ```bash
     uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ```
 
-7.  **Access API Documentation:**
+6.  **Access API Documentation:**
     * Open your browser and go to `http://localhost:8000/docs` to view the Swagger UI documentation.
 
 ## API Endpoints
@@ -89,3 +84,8 @@ The `dummyData.json` file contains a JSON object with a key `salesReps`, which i
     { "name": "Acme Corp", "industry": "Manufacturing", "contact": "alice@acmecorp.com" }
   ]
 }
+```
+
+## Author
+
+Mohammad Rizky Adhiguna
