@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [salesReps, setSalesReps] = useState([]);
@@ -41,35 +42,35 @@ export default function Home() {
     }
   };
 
-  if (loading) return <p>Loading sales representative data...</p>;
-  if (error) return <p>Error loading sales representative data: {error?.message}</p>; // Access the message property of the 'error' state
+  if (loading) return <p className={styles.loading}>Loading sales representative data...</p>;
+  if (error) return <p className={styles.error}>Error loading sales representative data: {error?.message}</p>;
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Sales Dashboard</h1>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Sales Dashboard</h1>
 
-      <section style={{ marginBottom: "2rem" }}>
-        <h2>Sales Representatives</h2>
+      <section className={styles.section}>
+        <h2 className={styles.heading3}>Sales Representatives</h2>
         {salesReps.map((rep) => (
-          <div key={rep.id} style={{ border: "1px solid #ccc", padding: "1rem", marginBottom: "1rem" }}>
-            <h3>{rep.name}</h3>
+          <div key={rep.id} className={styles.repCard}>
+            <h3 className={styles.heading3}>{rep.name}</h3>
             <p>Role: {rep.role}</p>
             <p>Region: {rep.region}</p>
-            <h4>Skills:</h4>
+            <h4 className={styles.heading4}>Skills:</h4>
             {rep.skills && rep.skills.length > 0 ? (
-              <ul>
+              <ul className={styles.list}>
                 {rep.skills.map((skill, index) => (
-                  <li key={index}>{skill}</li>
+                  <li key={index} className={styles.listItem}>{skill}</li>
                 ))}
               </ul>
             ) : (
               <p>No skills listed.</p>
             )}
-            <h4>Deals:</h4>
+            <h4 className={styles.heading4}>Deals:</h4>
             {rep.deals && rep.deals.length > 0 ? (
-              <ul>
+              <ul className={styles.list}>
                 {rep.deals.map((deal) => (
-                  <li key={deal.client}>
+                  <li key={deal.client} className={styles.listItem}>
                     <strong>Client: {deal.client}</strong> - Value: ${deal.value} - Status: {deal.status}
                   </li>
                 ))}
@@ -77,11 +78,11 @@ export default function Home() {
             ) : (
               <p>No deals assigned.</p>
             )}
-            <h4>Clients:</h4>
+            <h4 className={styles.heading4}>Clients:</h4>
             {rep.clients && rep.clients.length > 0 ? (
-              <ul>
+              <ul className={styles.list}>
                 {rep.clients.map((client) => (
-                  <li key={client.name}>
+                  <li key={client.name} className={styles.listItem}>
                     <strong>{client.name}</strong> - Industry: {client.industry} - Contact: {client.contact}
                   </li>
                 ))}
@@ -93,19 +94,20 @@ export default function Home() {
         ))}
       </section>
 
-      <section>
-        <h2>Ask a Question (AI Endpoint)</h2>
+      <section className={styles.section}>
+        <h2 className={styles.heading3}>Ask a Question (AI Endpoint)</h2>
         <div>
           <input
             type="text"
             placeholder="Enter your question..."
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
+            className={styles.input}
           />
-          <button onClick={handleAskQuestion}>Ask</button>
+          <button onClick={handleAskQuestion} className={styles.button}>Ask</button>
         </div>
         {answer && (
-          <div style={{ marginTop: "1rem" }}>
+          <div className={styles.answer}>
             <strong>AI Response:</strong> {answer}
           </div>
         )}
