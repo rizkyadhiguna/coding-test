@@ -1,0 +1,77 @@
+.container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.heading {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.repCard {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.heading3 {
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.heading4 {
+    color: #777;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.listItem {
+    margin-bottom: 0.3rem;
+}
+
+.error {
+    color: red;
+}
+
+.loading {
+    color: orange;
+}
+
+.input {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.answer {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
